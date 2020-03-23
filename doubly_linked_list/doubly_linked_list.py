@@ -27,7 +27,7 @@ class ListNode:
             current_prev.next = self.prev
 
     """Rearranges this ListNode's previous and next pointers
-    accordingly, effectively deleting this ListNode."""
+    accordingly, effectively deleting this ListNode"""
     def delete(self):
         if self.prev:
             self.prev.next = self.next
