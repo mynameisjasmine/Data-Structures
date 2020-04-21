@@ -160,12 +160,22 @@ class DoublyLinkedList:
              node.delete()   
         
     # """Returns the highest value currently in the list"""
-    # def get_max(self):
-          # Make max variable
-          # Loop through nodes via node.next
-          # If node.value is higher update max
-          # Return max
-    #     pass
+    def get_max(self):
+        if self.head is None:
+            return None
+        #   Make max variable
+        max_var = self.head.value
+        curr_node = self.head
+        #   Loop through nodes via node.next
+        while curr_node:
+            # If node.value is higher update max
+            if curr_node.value > max_var:
+                max_var = curr_node.value
+                curr_node = curr_node.next
+        # Return max
+        return max_var
+               
+
 
 class Stack:
     def __init__(self):
