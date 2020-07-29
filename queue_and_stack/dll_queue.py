@@ -3,7 +3,7 @@ import sys
 
 # sys.path.insert(0, r'../doubly_linked_list')
 
-# from doubly_linked_list import DoublyLinkedList 
+# from doubly_linked_list import DoublyLinkedList. 
 
 class ListNode:
     def __init__(self, value, prev=None, next=None):
