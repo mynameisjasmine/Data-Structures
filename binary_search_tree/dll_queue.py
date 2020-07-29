@@ -1,6 +1,8 @@
-import sys
 # sys.path.append('../doubly_linked_list')
-# from doubly_linked_list import DoublyLinkedList
+
+# sys.path.insert(0, r'../doubly_linked_list')
+
+# from doubly_linked_list import DoublyLinkedList 
 
 class ListNode:
     def __init__(self, value, prev=None, next=None):
@@ -160,38 +162,32 @@ class DoublyLinkedList:
              node.delete()   
         
     # """Returns the highest value currently in the list"""
-    def get_max(self):
-        if self.head is None:
-            return None
-        #   Make max variable
-        max_var = self.head.value
-        curr_node = self.head
-        #   Loop through nodes via node.next
-        while curr_node:
-            # If node.value is higher update max
-            if curr_node.value > max_var:
-                max_var = curr_node.value
-                curr_node = curr_node.next
-        # Return max
-        return max_var
-               
+    # def get_max(self):
+          # Make max variable
+          # Loop through nodes via node.next
+          # If node.value is higher update max
+          # Return max
+    #     pass
 
-
-class Stack:
+class Queue:
     def __init__(self):
         self.size = 0
         # Why is our DLL a good choice to store our elements?
         self.storage = DoublyLinkedList()
 
-    def push(self, value):
+    def enqueue(self, value):
         self.size += 1
-        self.storage.add_to_head(value)
-
-    def pop(self):
+        self.storage.add_to_tail(value)
+        
+    def dequeue(self):
         if self.size == 0:
             return
         self.size -= 1
         return self.storage.remove_from_head()
+      
+        
 
     def len(self):
-        return self.size
+        return self.storage.__len__()
+        
+
